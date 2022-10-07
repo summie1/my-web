@@ -24,33 +24,22 @@
     <section>
 <div id="map" style="width:100%; height:400px;"></div>
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-       
-		<script>
-        // Initialize the map
-        const map = L.map('map')
-      
-        // Get the tile layer from OpenStreetMaps
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      
-        // Specify the maximum zoom of the map
-        maxZoom: 15,
-      
-        // Set the attribution for OpenStreetMaps
-        attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-      
-        // Set the view of the map
-        // with the latitude, longitude and the zoom value
-        // map.setView
-        map.setView([ 0.062629, 34.287807] , 15);
-      
-        // Show a market at the position of the Eiffel Tower
-        let eiffelMarker = L.marker([ 0.062629, 34.287807]).addTo(map);
-      
-        // Bind popup to the marker with a popup
-        eiffelMarker.bindPopup("SIAYA COUNTY").openPopup();
-    </script>
+        <script>
+            // map options
+            var mapOptions = {
+             center:[ 0.062629, 34.287807],
+             zoom:10
+            }
+            //create map object
+            var map = new L.map('map', mapOptions)
+            //layer obj
+            var layer = new L.TileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
             
+            //add layer
+            map.addLayer(layer);
+         
+         
+         </script>
     </section>
 
     <section class="footer">
